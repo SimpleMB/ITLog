@@ -1,25 +1,11 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 005",
-      "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sam Smith"
-    },
-    {
-      "id": 2,
-      "message": "Workstation 007 not posting",
+      "message": "This is new log from my computer. Edit: I love coding. Edit 2: Really :)",
       "attention": true,
-      "date": "03-02-2019",
-      "tech": "John Doe"
-    },
-    {
-      "id": 3,
-      "message": "Changed memory on workstation 050",
-      "attention": false,
-      "date": "04-02-2019",
-      "tech": "Sara Wilson"
+      "tech": "Sam Smith",
+      "id": 1,
+      "date": "2019-11-14T11:40:15.366Z"
     }
   ],
   "techs": [
