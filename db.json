@@ -1,11 +1,32 @@
 {
   "logs": [
     {
-      "message": "This is new log from my computer. Edit: I love coding. Edit 2: Really :)",
+      "message": "This is new log from my computer. Edit: I love coding. Edit 2: Really :",
       "attention": true,
       "tech": "Sam Smith",
       "id": 1,
-      "date": "2019-11-14T11:40:15.366Z"
+      "date": "2019-11-14T12:30:26.758Z"
+    },
+    {
+      "message": "henlo dziunia :)",
+      "attention": false,
+      "tech": "John Doe",
+      "date": "2019-11-14T12:49:35.745Z",
+      "id": 2
+    },
+    {
+      "message": "Marcek naprawia gitarę",
+      "attention": false,
+      "tech": "Sam Smith",
+      "date": "2019-11-14T12:49:59.800Z",
+      "id": 3
+    },
+    {
+      "message": "Nie wiem co napisać i ciąglę mylę i z u :(",
+      "attention": true,
+      "tech": "Sara Wilson",
+      "date": "2019-11-14T12:50:32.594Z",
+      "id": 4
     }
   ],
   "techs": [

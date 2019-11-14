@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getLogs } from "../../actions/logActions";
 
-const Logs = ({ log: { logs, loading }, getLogs }) => {
+const Logs = ({ log: { logs, loading, search }, getLogs }) => {
   useEffect(() => {
     getLogs();
     // eslint-disable-next-line
@@ -15,7 +15,7 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
     loading || logs === null ? (
       <Preloader />
     ) : (
-      logs.map(log => <LogItem key={log.id} log={log} />)
+      (search || logs).map(log => <LogItem key={log.id} log={log} />)
     );
 
   return (

@@ -6,7 +6,9 @@ import {
   DELETE_LOG,
   SET_CURRENT,
   CLEAR_CURRENT,
-  UPDATE_LOG
+  UPDATE_LOG,
+  SEARCH_LOGS,
+  CLEAR_LOGS
 } from "./types";
 
 // Get LOGS from server
@@ -114,6 +116,7 @@ export const setCurrent = id => async dispatch => {
       type: LOGS_ERROR,
       payload: err.response.data
     });
+    dispatch(clearCurrent());
   }
 };
 
@@ -123,6 +126,20 @@ export const clearCurrent = () => {
     type: CLEAR_CURRENT
   };
 };
+
+export const searchLogs = (search) => async dispatch => {
+  dispatch(setLoading());
+  dispatch({
+    type: SEARCH_LOGS,
+    payload: search,
+  });
+}
+
+export const clearLogs = () => async dispatch => {
+  dispatch({
+    type: CLEAR_LOGS,
+  })
+}
 
 // Internal functon to set loading to true
 export const setLoading = () => {
