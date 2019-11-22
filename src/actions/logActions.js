@@ -1,5 +1,5 @@
 import {
-  SET_LOADING,
+  SET_LOADING_LOGS,
   GET_LOGS,
   LOGS_ERROR,
   ADD_LOG,
@@ -67,7 +67,6 @@ export const deleteLog = id => async dispatch => {
       payload: id
     });
   } catch (err) {
-    console.log(err);
     dispatch({
       type: LOGS_ERROR,
       payload: err.response.data
@@ -153,6 +152,6 @@ export const clearLogs = () => async dispatch => {
 // Internal functon to set loading to true
 export const setLoading = () => {
   return {
-    type: SET_LOADING
+    type: SET_LOADING_LOGS
   };
 };

@@ -2,20 +2,13 @@ import React, { useState } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 import { connect } from "react-redux";
 import { addLog } from "../../actions/logActions";
-import { getTechs } from "../../actions/techActions";
 import PropTypes from "prop-types";
 import TechOptionList from "../techs/TechOptionList";
-// import Preloader from "../layout/Preloader";
 
-const AddLogModal = ({ addLog, getTechs, tech: { techs, loading } }) => {
+const AddLogModal = ({ addLog }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState("");
-
-  // useEffect(() => {
-  //   getTechs();
-  //   // eslint-disable-next-line
-  // }, [message]);
 
   const onMessage = e => {
     setMessage(e.target.value);
@@ -47,8 +40,6 @@ const AddLogModal = ({ addLog, getTechs, tech: { techs, loading } }) => {
       setTech("");
     }
   };
-
-  // const techList =  loading ? null : techs !== null && techs.map(tech => <TechOption key={tech.id} tech={tech}/>) 
 
   return (
     <div id="add-log-modal" className="modal" style={modalStyle}>
@@ -122,11 +113,9 @@ const mapStateToProps = state => ({
 })
 AddLogModal.propTypes = {
   addLog: PropTypes.func.isRequired,
-  getTechs: PropTypes.func.isRequired,
-  tech: PropTypes.object.isRequired,
 };
 
 export default connect(
   mapStateToProps,
-  { addLog, getTechs }
+  { addLog }
 )(AddLogModal);

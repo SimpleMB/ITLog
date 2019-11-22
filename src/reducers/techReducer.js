@@ -1,4 +1,4 @@
-import { GET_TECHS, SET_LOADING } from "../actions/types";
+import { GET_TECHS, SET_LOADING_TECHS, ADD_TECH, DELETE_TECH } from "../actions/types";
 
 const initialState = {
   techs: null,
@@ -14,7 +14,20 @@ export default (state = initialState, action) => {
         techs: action.payload,
         loading: false
       };
-    case SET_LOADING:
+    case ADD_TECH:
+      return {
+        ...state,
+        techs: [...state.techs, action.payload],
+        loading: false,
+      }
+    case DELETE_TECH:
+      const deletedTech = state.techs.filter(tech => tech.id !== action.payload);
+      return {
+        ...state,
+        techs: deletedTech,
+        loading: false,
+      }
+    case SET_LOADING_TECHS:
       return {
         ...state,
         loading: true,

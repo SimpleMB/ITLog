@@ -1,5 +1,5 @@
 import {
-  SET_LOADING,
+  SET_LOADING_LOGS,
   LOGS_ERROR,
   GET_LOGS,
   ADD_LOG,
@@ -46,9 +46,9 @@ export default (state = initialState, action) => {
       const updatedLogs = state.logs.map(log =>
         log.id === action.payload.id ? action.payload : log
       );
-      const updatedSearch = state.search.map(log =>
+      const updatedSearch = state.search !== null ? state.search.map(log =>
         log.id === action.payload.id ? action.payload : log
-      );
+      ) : null;
       return {
         ...state,
         logs: updatedLogs,
@@ -77,7 +77,7 @@ export default (state = initialState, action) => {
         ...state,
         search: null
       };
-    case SET_LOADING:
+    case SET_LOADING_LOGS:
       return {
         ...state,
         loading: true

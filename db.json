@@ -3,9 +3,9 @@
     {
       "message": "This is new log from my computer. Edit: I love coding. Edit 2: Really :",
       "attention": true,
-      "tech": "Sam Smith",
+      "tech": "John Doe",
       "id": 1,
-      "date": "2019-11-14T12:30:26.758Z"
+      "date": "2019-11-22T10:11:01.930Z"
     },
     {
       "message": "henlo dziunia :) Herlo Marcek",
@@ -15,53 +15,46 @@
       "date": "2019-11-14T12:55:14.044Z"
     },
     {
-      "message": "sadasdasdasd",
+      "message": "sfsdaf",
       "attention": false,
-      "tech": "John Doe",
-      "date": "2019-11-21T13:42:21.283Z",
-      "id": 3
-    },
-    {
-      "message": "sadasdasdasd",
-      "attention": false,
-      "tech": "John Doe",
-      "date": "2019-11-21T13:44:58.422Z",
+      "tech": "Sam Smith",
+      "date": "2019-11-22T09:44:01.688Z",
       "id": 4
     },
     {
-      "message": "ffgfdgd",
-      "attention": false,
+      "message": "fdsfsdfsdf",
+      "attention": true,
       "tech": "Sam Smith",
-      "date": "2019-11-21T13:46:27.621Z",
+      "date": "2019-11-22T10:03:46.693Z",
       "id": 5
     },
     {
-      "message": "hjhgjgh",
-      "attention": true,
-      "tech": "John Doe",
-      "date": "2019-11-21T13:52:22.876Z",
+      "message": "erwerewrewrewrerewrwerwerewr",
+      "attention": false,
+      "tech": "Sara Wilson",
+      "date": "2019-11-22T10:04:08.645Z",
       "id": 6
     },
     {
-      "message": "hgfhfghfg",
-      "attention": false,
-      "tech": "Sara Wilson",
-      "date": "2019-11-21T13:53:05.798Z",
-      "id": 7
-    },
-    {
-      "message": "fdgfgdfgdfg",
+      "message": "gfhfghghfgh",
       "attention": true,
-      "tech": "John Doe",
-      "date": "2019-11-22T09:03:39.794Z",
+      "tech": "Barbara Johnson",
+      "date": "2019-11-22T10:06:12.296Z",
       "id": 8
     },
     {
-      "message": "fdgdfdfgdfgdf",
+      "message": "safsdfsd",
+      "attention": true,
+      "tech": "Marcel Mazur",
+      "date": "2019-11-22T10:49:15.636Z",
+      "id": 10
+    },
+    {
+      "message": "asfsa",
       "attention": false,
-      "tech": "Sam Smith",
-      "date": "2019-11-22T09:32:20.313Z",
-      "id": 9
+      "tech": "Bartłomiej Mazur",
+      "date": "2019-11-22T10:49:22.316Z",
+      "id": 11
     }
   ],
   "techs": [
@@ -81,9 +74,14 @@
       "lastName": "Wilson"
     },
     {
-      "firstName": "Barbara",
-      "lastName": "Johnson",
+      "firstName": "Bartłomiej",
+      "lastName": "Mazur",
       "id": 4
+    },
+    {
+      "firstName": "Marcel",
+      "lastName": "Mazur",
+      "id": 5
     }
   ]
 }

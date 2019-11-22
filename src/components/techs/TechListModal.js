@@ -3,9 +3,9 @@ import TechItem from "./TechItem";
 import Preloader from "../layout/Preloader";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getTechs } from "../../actions/techActions";
+import { getTechs, deleteTech } from "../../actions/techActions";
 
-const TechListModal = ({ tech: { techs, loading }, getTechs }) => {
+const TechListModal = ({ tech: { techs, loading }, getTechs, deleteTech }) => {
 
   useEffect(() => {
     getTechs();
@@ -15,7 +15,7 @@ const TechListModal = ({ tech: { techs, loading }, getTechs }) => {
   const techList = loading ? (
     <Preloader />
   ) : (
-    techs !== null && techs.map(tech => <TechItem key={tech.id} tech={tech} />)
+    techs !== null && techs.map(tech => <TechItem key={tech.id} tech={tech} deleteTech={deleteTech}/>)
   );
 
   return (
@@ -35,6 +35,7 @@ const mapStateToProps = state => ({
 
 TechListModal.propTypes = {
   tech: PropTypes.object.isRequired,
-  getTechs: PropTypes.func.isRequired
+  getTechs: PropTypes.func.isRequired,
+  deleteTech: PropTypes.func.isRequired,
 };
-export default connect(mapStateToProps, { getTechs })(TechListModal);
+export default connect(mapStateToProps, { getTechs, deleteTech })(TechListModal);
