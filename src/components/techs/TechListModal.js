@@ -1,37 +1,40 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect } from "react";
 import TechItem from "./TechItem";
-import Preloader from '../layout/Preloader';
+import Preloader from "../layout/Preloader";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getTechs } from "../../actions/techActions";
 
-
-const TechListModal = () => {
-  
-  const [techs, setTechs] = useState([]);
-  const [loading, setLoading] = useState(false);
+const TechListModal = ({ tech: { techs, loading }, getTechs }) => {
 
   useEffect(() => {
     getTechs();
-  }, [])
+    // eslint-disable-next-line
+  }, []);
 
-  const getTechs = async () => {
-    setLoading(true);
-    const res = await fetch('/techs');
-    const data = await res.json();
-    setTechs(data);
-    setLoading(false);
-  }
-
-  const techList = loading ? <Preloader /> : techs.map(tech => <TechItem key={tech.id} tech={tech}/>)
+  const techList = loading ? (
+    <Preloader />
+  ) : (
+    techs !== null && techs.map(tech => <TechItem key={tech.id} tech={tech} />)
+  );
 
   return (
     <div id="tech-list-modal" className="modal">
       <div className="modal-content">
         <h4>Technician List</h4>
         <ul className="collection">
-          {!loading && techs.length === 0 ? "No techs to show" : techList}
+          {!loading && techs !== null && techs.length === 0 ? "No techs to show" : techList}
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
+const mapStateToProps = state => ({
+  tech: state.tech
+});
 
-export default TechListModal;
+TechListModal.propTypes = {
+  tech: PropTypes.object.isRequired,
+  getTechs: PropTypes.func.isRequired
+};
+export default connect(mapStateToProps, { getTechs })(TechListModal);

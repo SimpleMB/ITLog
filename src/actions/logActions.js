@@ -25,7 +25,7 @@ export const getLogs = () => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
@@ -49,7 +49,7 @@ export const addLog = log => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
@@ -62,12 +62,12 @@ export const deleteLog = id => async dispatch => {
     await fetch(`/logs/${id}`, {
       method: "DELETE"
     });
-
     dispatch({
       type: DELETE_LOG,
       payload: id
     });
   } catch (err) {
+    console.log(err);
     dispatch({
       type: LOGS_ERROR,
       payload: err.response.data
@@ -90,12 +90,12 @@ export const updateLog = log => async dispatch => {
     dispatch({
       type: UPDATE_LOG,
       payload: data
-    })
+    });
     dispatch(clearCurrent());
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
   }
 };
@@ -114,7 +114,7 @@ export const setCurrent = id => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.response.statusText
     });
     dispatch(clearCurrent());
   }
@@ -127,19 +127,28 @@ export const clearCurrent = () => {
   };
 };
 
-export const searchLogs = (search) => async dispatch => {
-  dispatch(setLoading());
-  dispatch({
-    type: SEARCH_LOGS,
-    payload: search,
-  });
-}
+export const searchLogs = search => async dispatch => {
+  try {
+    dispatch(setLoading());
+    const res = await fetch(`/logs?q=${search}`);
+    const data = await res.json();
+    dispatch({
+      type: SEARCH_LOGS,
+      payload: data
+    });
+  } catch (err) {
+    dispatch({
+      type: LOGS_ERROR,
+      payload: err.response.statusText
+    });
+  }
+};
 
 export const clearLogs = () => async dispatch => {
   dispatch({
-    type: CLEAR_LOGS,
-  })
-}
+    type: CLEAR_LOGS
+  });
+};
 
 // Internal functon to set loading to true
 export const setLoading = () => {

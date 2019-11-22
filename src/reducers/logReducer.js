@@ -35,7 +35,7 @@ export default (state = initialState, action) => {
       };
     case DELETE_LOG:
       const newLogs = state.logs.filter(log => log.id !== action.payload);
-      const newSearch = state.search.filter(log => log.id !== action.payload);
+      const newSearch = state.search !== null ? state.search.filter(log => log.id !== action.payload) : null;
       return {
         ...state,
         logs: newLogs,
@@ -67,13 +67,9 @@ export default (state = initialState, action) => {
         current: null
       };
     case SEARCH_LOGS:
-      const rgx = new RegExp(action.payload, "ig");
-      const searchLogs = state.logs.filter(
-        log => rgx.test(log.message) || rgx.test(log.tech)
-      );
       return {
         ...state,
-        search: searchLogs,
+        search: action.payload,
         loading: false
       };
     case CLEAR_LOGS:

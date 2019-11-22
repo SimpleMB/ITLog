@@ -8,25 +8,60 @@
       "date": "2019-11-14T12:30:26.758Z"
     },
     {
-      "message": "henlo dziunia :)",
+      "message": "henlo dziunia :) Herlo Marcek",
       "attention": false,
       "tech": "John Doe",
-      "date": "2019-11-14T12:49:35.745Z",
-      "id": 2
+      "id": 2,
+      "date": "2019-11-14T12:55:14.044Z"
     },
     {
-      "message": "Marcek naprawia gitarę",
+      "message": "sadasdasdasd",
       "attention": false,
-      "tech": "Sam Smith",
-      "date": "2019-11-14T12:49:59.800Z",
+      "tech": "John Doe",
+      "date": "2019-11-21T13:42:21.283Z",
       "id": 3
     },
     {
-      "message": "Nie wiem co napisać i ciąglę mylę i z u :(",
-      "attention": true,
-      "tech": "Sara Wilson",
-      "date": "2019-11-14T12:50:32.594Z",
+      "message": "sadasdasdasd",
+      "attention": false,
+      "tech": "John Doe",
+      "date": "2019-11-21T13:44:58.422Z",
       "id": 4
+    },
+    {
+      "message": "ffgfdgd",
+      "attention": false,
+      "tech": "Sam Smith",
+      "date": "2019-11-21T13:46:27.621Z",
+      "id": 5
+    },
+    {
+      "message": "hjhgjgh",
+      "attention": true,
+      "tech": "John Doe",
+      "date": "2019-11-21T13:52:22.876Z",
+      "id": 6
+    },
+    {
+      "message": "hgfhfghfg",
+      "attention": false,
+      "tech": "Sara Wilson",
+      "date": "2019-11-21T13:53:05.798Z",
+      "id": 7
+    },
+    {
+      "message": "fdgfgdfgdfg",
+      "attention": true,
+      "tech": "John Doe",
+      "date": "2019-11-22T09:03:39.794Z",
+      "id": 8
+    },
+    {
+      "message": "fdgdfdfgdfgdf",
+      "attention": false,
+      "tech": "Sam Smith",
+      "date": "2019-11-22T09:32:20.313Z",
+      "id": 9
     }
   ],
   "techs": [

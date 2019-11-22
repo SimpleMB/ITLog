@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 import { connect } from "react-redux";
 import { addLog } from "../../actions/logActions";
+import { getTechs } from "../../actions/techActions";
 import PropTypes from "prop-types";
+import TechOptionList from "../techs/TechOptionList";
+// import Preloader from "../layout/Preloader";
 
-const AddLogModal = ({ addLog }) => {
+const AddLogModal = ({ addLog, getTechs, tech: { techs, loading } }) => {
   const [message, setMessage] = useState("");
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState("");
+
+  // useEffect(() => {
+  //   getTechs();
+  //   // eslint-disable-next-line
+  // }, [message]);
 
   const onMessage = e => {
     setMessage(e.target.value);
@@ -40,6 +48,8 @@ const AddLogModal = ({ addLog }) => {
     }
   };
 
+  // const techList =  loading ? null : techs !== null && techs.map(tech => <TechOption key={tech.id} tech={tech}/>) 
+
   return (
     <div id="add-log-modal" className="modal" style={modalStyle}>
       <div className="modal-content">
@@ -68,9 +78,7 @@ const AddLogModal = ({ addLog }) => {
               <option value="" disabled>
                 Select technician
               </option>
-              <option value="John Doe">John Doe</option>
-              <option value="Sam Smith">Sam Smith</option>
-              <option value="Sara Wilson">Sara Wilson</option>
+              <TechOptionList />
             </select>
           </div>
         </div>
@@ -108,11 +116,17 @@ const modalStyle = {
   width: "75%",
   height: "75%"
 };
+
+const mapStateToProps = state => ({
+  tech: state.tech
+})
 AddLogModal.propTypes = {
-  addLog: PropTypes.func.isRequired
+  addLog: PropTypes.func.isRequired,
+  getTechs: PropTypes.func.isRequired,
+  tech: PropTypes.object.isRequired,
 };
 
 export default connect(
-  null,
-  { addLog }
+  mapStateToProps,
+  { addLog, getTechs }
 )(AddLogModal);
